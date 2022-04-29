@@ -2,29 +2,23 @@
 
 class Solution:
     def sort012(self,arr,n):
-        # i= arr.index(0)
-        # j = arr.index(1) 
-        # k = arr.index(2)
-        # if j < k:
-        #     pass
-        # else:
-        #     j=k
-            
-        # i,j = j,j+1
-        # for j in range(j,n):
-        #     if arr[j]==0:
-        #         arr[i],arr[j]= arr[j],arr[i]
-        #         i+=1
-        # i = arr.index(1)
-        # j = arr.index(2)
-        # if j < i:
-        #     arr[i],arr[j]=arr[j],arr[i]
-        # for j in range(i+1,n):
-        #     if arr[j]==1:
-        #         arr[i],arr[j]= arr[j],arr[i]
-        #         i+=1
-        arr.sort()
-        return arr
+        i= arr.index(0)
+        j = arr.index(1) 
+        k = arr.index(2)
+        if j < k:
+            i,j = j,j+1
+        else:
+            i,j = k,k+1
+        for j in range(j,n):
+            if arr[j]==0:
+                arr[i],arr[j]= arr[j],arr[i]
+                i+=1
+        i = arr.index(2)
+        
+        for j in range(i+1,n):
+            if arr[j]==1:
+                arr[i],arr[j]= arr[j],arr[i]
+                i+=1
             
         
         # code here
