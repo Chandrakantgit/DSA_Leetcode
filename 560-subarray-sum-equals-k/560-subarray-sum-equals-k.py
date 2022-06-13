@@ -30,8 +30,6 @@ class Solution:
             diff = curSum - k
             res += prefixSums.get(diff, 0)
             prefixSums[curSum] = 1 + prefixSums.get(curSum, 0)
-        print(prefixSums)
-            
         return res
         
                 
