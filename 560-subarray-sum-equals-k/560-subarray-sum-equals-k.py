@@ -1,5 +1,7 @@
 class Solution:
     # def subarraySum(self, nums: List[int], k: int) -> int:
+    
+    # Used set in this one,some test cases weren't working.
 #         s = set()
 #         sum_ = 0
 #         count = 0
@@ -17,6 +19,7 @@ class Solution:
 #         return count
 
 
+# USed dictionary in this one,worked
     def subarraySum(self, nums: List[int], k: int) -> int: 
         res = 0
         curSum = 0
@@ -27,6 +30,7 @@ class Solution:
             diff = curSum - k
             res += prefixSums.get(diff, 0)
             prefixSums[curSum] = 1 + prefixSums.get(curSum, 0)
+        print(prefixSums)
             
         return res
         
