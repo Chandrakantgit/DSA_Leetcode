@@ -14,7 +14,6 @@ class Solution:
                 matrix[s[0]][t] = 0
             for u in range(row):
                 matrix[u][s[1]] = 0
-        print(matrix)
         """
         Do not return anything, modify matrix in-place instead.
         """
