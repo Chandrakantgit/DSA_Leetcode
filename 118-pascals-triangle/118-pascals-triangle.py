@@ -15,9 +15,7 @@ class Solution:
                 arr[0]=1
                 arr[-1]=1
                 for j in range(1,r):
-                    arr[j] = matrix[r-1][j-1]+matrix[r-1][j]
-                    
+                    arr[j] = matrix[r-1][j-1]+matrix[r-1][j]   
             matrix.append(arr)
-        print(matrix)
         return matrix
                 
