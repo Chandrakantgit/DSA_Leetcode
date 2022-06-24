@@ -10,10 +10,10 @@ class Solution:
         
         if ind == len(arr):
             if targ == 0:
-                ar = list()
-                ar = [x for x in ds]
-                answer.append(ar)
-            return
+                ar = list()                     #This pasrt here what is does ??
+                ar = [x for x in ds]            # see if you directly copy the ds in answer,every element in answer would be same list 
+                answer.append(ar)               # and every operation done on that list would refelct on every element in answer
+            return                              # so at last the answer is going to be empty arrays
         
         if arr[ind] <= targ :
             ds.append(arr[ind])
