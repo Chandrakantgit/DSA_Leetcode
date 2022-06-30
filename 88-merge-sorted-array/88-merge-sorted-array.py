@@ -4,6 +4,13 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
+        #Approach 1 : add all elements of nums2 in 1 and then sort.
+        #Approach 2 : We can think of Iterating in arr1 and whenever we encounter an element 
+        #             that is greater than the first element of arr2, just swap it. Now rearrange the arr2 in 
+        #             a sorted manner, after completion of the loop we will get elements of both the arrays in
+        #             non-decreasing order.
+
+        # This is most optimised aproach,Intuition is not there. Learned from algos.
         gap = math.ceil((m+n)/2)
         while gap>0:
             i = 0
