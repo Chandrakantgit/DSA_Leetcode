@@ -5,6 +5,8 @@ class Solution:
         verticalCuts = sorted(verticalCuts)
         horizontalCuts = sorted(horizontalCuts)
         
+        
+        #for finging maximum width
         for x in range(len(verticalCuts)):
             temp_w = 0
             if x==0 and verticalCuts[x] != 0:
@@ -22,26 +24,26 @@ class Solution:
         if w - verticalCuts[x] > max_w:
             max_w = w - verticalCuts[x]
                 
+                
+        #for finging maximum height
         for y in range(len(horizontalCuts)):
             temp_h = 0
             if y==0 and horizontalCuts[y] != 0:
                 temp_h = horizontalCuts[y] - 0
-                print("here",temp_h)
                 if temp_h > max_h:
                     max_h = temp_h
             elif y ==0 and horizontalCuts[y]==0:
                 pass
             else:
                 temp_h = horizontalCuts[y]- horizontalCuts[y-1]
-                print("here1",temp_h)
                 if temp_h > max_h:
                     max_h = temp_h
                 else:
                     pass
-        print(max_h,max_w)
         if h - horizontalCuts[y] > max_h:
             max_h = h -  horizontalCuts[y]
             
+        
         return (max_h*max_w)%(10**9+7)
             
                 
