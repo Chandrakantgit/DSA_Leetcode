@@ -8,15 +8,12 @@ class Solution:
                 ans.append(x)
                 flag = True
                 temp = x
-                print("here")
             elif flag == True and x < temp:
                 ans.append(x)
                 flag = False
                 temp = x
-                print("here2")
             else:
                 temp = x
-                print("here3")
         
         temp = nums[0]
         ans1=[nums[0]]
@@ -26,15 +23,12 @@ class Solution:
                 ans1.append(x)
                 flag = True
                 temp = x
-                print("here")
             elif flag == True and x > temp:
                 ans1.append(x)
                 flag = False
                 temp = x
-                print("here2")
             else:
                 temp = x
-                print("here3")
         if len(ans) > len(ans1):
             return len(ans)
         else:
