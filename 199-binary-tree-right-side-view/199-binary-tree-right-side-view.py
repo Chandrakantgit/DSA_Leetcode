@@ -18,3 +18,4 @@ class Solution:
         res = []
         solve(root,0)
         return res
+            
