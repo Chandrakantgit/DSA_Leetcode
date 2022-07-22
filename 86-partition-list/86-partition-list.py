@@ -5,7 +5,7 @@
 #         self.next = next
 class Solution:
     def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
-        
+        # making 2 list,one having all values smaller than x and other having greater than them.Then return joined them
         small = ListNode(-1)
         large = ListNode(-1)
         small_head = small
