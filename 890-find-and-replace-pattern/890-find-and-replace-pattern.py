@@ -1,7 +1,7 @@
 class Solution:
     def findAndReplacePattern(self, words: List[str], p: str) -> List[str]:
-        if words == ["abcdefghijklab","abcdefghijkabl"]:
-            return ["abcdefghijklab"]
+        # if words == ["abcdefghijklab","abcdefghijkabl"]:
+        #     return ["abcdefghijklab"]
         ans = []
         Map_p={}
         Set_p=set()
@@ -11,7 +11,7 @@ class Solution:
                 numPattern = numPattern+str(Map_p[x])
             else:
                 Set_p.add(x)
-                Map_p[x] = Map_p.get(x,len(Set_p))
+                Map_p[x] = Map_p.get(x,len(Set_p)-1)
                 numPattern = numPattern+str(Map_p[x])
         
         for y in words:
@@ -23,11 +23,10 @@ class Solution:
                     numPattern2 = numPattern2+str(Map_p[z])
                 else:
                     Set_p.add(z)
-                    Map_p[z] = Map_p.get(z,len(Set_p))
+                    Map_p[z] = Map_p.get(z,len(Set_p)-1)
                     numPattern2 = numPattern2+str(Map_p[z])
                     
                 if numPattern2 == numPattern[0:len(numPattern2)]:
-                    print(numPattern2,numPattern[0:len(numPattern2)])
                     pass
                 else:
                     break
