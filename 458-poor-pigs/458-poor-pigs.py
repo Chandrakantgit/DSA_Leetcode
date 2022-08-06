@@ -1,5 +1,5 @@
 import math
-
+##useless question
 class Solution:
     def poorPigs(self, buckets: int, minutesToDie: int, minutesToTest: int) -> int:
         test = minutesToTest/minutesToDie
