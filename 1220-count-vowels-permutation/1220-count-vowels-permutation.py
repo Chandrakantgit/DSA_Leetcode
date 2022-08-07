@@ -1,6 +1,6 @@
 class Solution:
     def countVowelPermutation(self, n: int) -> int:
-        
+        #Revise it.
         dp = [[],[1,1,1,1,1]]
         
         a,e,i,o,u = 0,1,2,3,4
