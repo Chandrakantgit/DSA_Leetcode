@@ -12,12 +12,11 @@ class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         
         self.inOrder(root)
-        ans = True
         
         for x in range(0,len(self.inorder)-1):
             if self.inorder[x] >= self.inorder[x+1]:
                 return False
-        return ans
+        return True
             
             
     def inOrder(self,node):
