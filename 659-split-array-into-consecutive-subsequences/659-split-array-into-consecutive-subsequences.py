@@ -1,23 +1,28 @@
 class Solution:
     def isPossible(self, nums: List[int]) -> bool:
         
-        seq = defaultdict(int)      # key: ending number, val: how many seqs
-        left = Counter(nums)        # key: number, val: how many of key are left unchecked
+        availabilityMap = dict()
+        vacMap = dict()
         
-        for num in nums:
-            if (not left[num]): continue   # the number is already in seqs, we don't need to check again
+        for x in nums:
+            availabilityMap[x] = availabilityMap.get(x,0) + 1
             
-            if (seq[num-1] > 0):    # If there is sequence before the number, we add the number to the seq
-                seq[num-1] -= 1 
-                seq[num] += 1
-                left[num] -= 1
-                
-            else:   # If not we create a new seq using the number
-                if (not left[num+1] or not left[num+2]):  #  If there aren't two numbers behind to let us create new seq, return False
-                    return False
-                left[num] -= 1
-                left[num+1] -= 1
-                left[num+2] -= 1
-                seq[num+2] += 1
-        
+        for y in nums:
+            if availabilityMap.get(y) <= 0: #
+                continue
+            elif vacMap.get(y,0) > 0:   ##Vacancy found in a sub sequence
+                availabilityMap[y] = availabilityMap[y] - 1
+                vacMap[y] = vacMap[y]-1
+                vacMap[y+1] = vacMap.get(y+1,0) + 1
+            elif availabilityMap.get(y,0) > 0 and availabilityMap.get(y+1,0) > 0 and availabilityMap.get(y+2,0) > 0:  ## starting a new subssequence
+                availabilityMap[y] = availabilityMap[y]-1
+                availabilityMap[y+1] = availabilityMap[y+1]-1
+                availabilityMap[y+2] = availabilityMap[y+2]-1
+                vacMap[y+3] = vacMap.get(y+3,0)+1
+            else:
+                return False
         return True
+
+                
+            
+        
