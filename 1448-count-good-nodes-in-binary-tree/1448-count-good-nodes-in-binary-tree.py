@@ -7,8 +7,8 @@
 class Solution:
     def __init__(self):
         self.count = 0
+    
     def goodNodes(self, root: TreeNode) -> int:
-        
         if root is None:
             return self.count
         maxi = root.val
