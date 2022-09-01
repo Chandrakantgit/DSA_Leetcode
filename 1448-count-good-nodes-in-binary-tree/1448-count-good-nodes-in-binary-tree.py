@@ -20,15 +20,9 @@ class Solution:
                 if root.val >= maxi:
                     maxi = root.val
                     self.count+=1
-                    print(root.val)
                 traverse(root.left,maxi)
                 traverse(root.right,maxi)
-                    # self.maxi = root.val
-                    
-                # else:
-                #     traverse(root.left,self.maxi)
-                #     self.maxi = root.val
-                #     traverse(root.right,self.maxi)
+                
         traverse(root,maxi)
         return self.count
         
