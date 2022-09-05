@@ -15,7 +15,7 @@ class Solution:
                 newk , ans = [],[]
                 for x in k:
                     ans.append(x.val)
-                    if x.children is not None:
+                    if x.children:
                         for y in x.children:
                             newk.append(y)
                 res.append(ans)
