@@ -18,7 +18,6 @@ class Solution:
                 while stack!=[]:
                     node = stack.pop()
                     tempAns.append(node.val)
-                    print("appending",node.val)
                     if node.left : temp.append(node.left)
                     if node.right: temp.append(node.right)
                 stack = stack + temp
@@ -36,7 +35,6 @@ class Solution:
                 stack = stack + temp
                 ans.append(tempAns)
                 flag = not flag
-        print(ans)
         return ans
                 
                     
