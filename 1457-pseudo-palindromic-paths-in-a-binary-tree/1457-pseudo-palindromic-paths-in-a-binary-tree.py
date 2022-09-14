@@ -6,6 +6,8 @@
 #         self.right = right
 class Solution:
     def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
+        
+#it is a solution but too complex
 #         ans = []
 #         def PPP(node,string,ans):
 #             if node is None:
